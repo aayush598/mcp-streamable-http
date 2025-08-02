@@ -3,7 +3,7 @@ from mcp.client.sse import sse_client
 from mcp.server.fastmcp import tools
 
 async def run():
-    async with sse_client(url="http://localhost:8000/sse") as streams:
+    async with sse_client(url="https://mcp-streamable-http-cmbe.onrender.com/sse") as streams:
         async with ClientSession(*streams) as session:
             await session.initialize()
             tools = await session.list_tools()
